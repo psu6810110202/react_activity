@@ -24,6 +24,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    text-align: center;
 
     max-width: 500px;
     width: 300px;
@@ -31,7 +33,6 @@ html {
     background-color: #e18b39;
     color: rgb(255, 255, 255);
 
-    text-align: center;
     font-size: 12px;
     font-weight: bold;
 
@@ -40,11 +41,55 @@ html {
     border-radius: 30px;
 }
 
+.Navbar-message {
+    max-width: 500px;
+    width: 90%;
+    
+    background-color: #c8660a;
+
+    font-size: 12px;
+    font-weight: normal;
+
+    display: block;
+    text-align: left;
+    border-radius: 10px;
+
+    padding: 0;
+    margin: 0 auto 1rem auto;
+}
+
+button {
+    background-Color: #e49041;
+    color: white;
+    margin: 0 auto;
+    border: none;
+    padding: 10px 15px;
+    border-Radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button {
+    flex-shrink: 0; 
+    
+    background-color: #cc782a; 
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .EnterYourNote {
     background-Color: #ffd699ff;
-    color: #c77a32;
+    color: #4b1b00;
     
-    margin: 0 auto;
+    margin: 0;
     border: none;
     padding: 15px;
     border-Radius: 5px;
@@ -56,18 +101,32 @@ html {
     margin-top: 20px;
 }
 
-button {
-    background-Color: #cc782a;
-    color: white;
-    margin: 0 auto;
-    border: none;
-    padding: 10px 15px;
-    border-Radius: 5px;
-    cursor: pointer;
+.note-item {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    color: #ffffff;
+    border-radius: 10px;
+    
+    margin-bottom: 10px; 
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.note-text {
+    flex-grow: 1; 
+    
+    flex-basis: 90%;
+    
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    
+    margin-right: 0; 
+    
+    max-width: calc(100% - 70px);
 }
