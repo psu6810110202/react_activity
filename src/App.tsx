@@ -5,7 +5,13 @@ import type { Note } from "./types";
 import React, { useState } from "react";
 
 function App() {
-    const [notes, setNotes] = useState<Note[]>([]);
+    const [notes, setNotes] = useState<Note[]>( []);
+
+    // Function to delete a note by id
+    const deleteNote = (id: number) => {
+        setNotes(notes.filter((note) => note.id !== id));
+    };
+
     const addNote = (text: string) => {
         const newNote: Note = {
             id: notes.length + 1,
@@ -13,11 +19,18 @@ function App() {
         };
         setNotes([...notes, newNote]);
     };
-    
+
+    const savedNotes = localStorage.getItem("notes");
+    React.useEffect(() => {
+        if (savedNotes) {
+            setNotes(JSON.parse(savedNotes));
+        }
+    }, []);
+
     return (
         <div className="App">
             <NoteForm addNote={addNote} />
-            <NoteList notes={notes} />
+            <NoteList notes={notes} onDelete={deleteNote} />
         </div>
     );
 }
