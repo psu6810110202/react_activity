@@ -27,6 +27,17 @@ function App() {
         }
     }, []);
 
+    const saved = localStorage.getItem("notes");
+    React.useEffect(() => {
+        if (saved) {
+            setNotes(JSON.parse(saved));
+        }
+    }, []);
+
+    React.useEffect(() => {
+        localStorage.setItem("notes", JSON.stringify(notes));
+    }, [notes]);
+    
     return (
         <div className="App">
             <NoteForm addNote={addNote} />
