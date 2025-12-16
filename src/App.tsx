@@ -37,7 +37,7 @@ function App() {
     React.useEffect(() => {
         localStorage.setItem("notes", JSON.stringify(notes));
     }, [notes]);
-    
+
     return (
         <div className="App">
             <NoteForm addNote={addNote} />

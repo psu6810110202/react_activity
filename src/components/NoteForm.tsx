@@ -19,19 +19,22 @@ function NoteForm({ addNote }: NoteFormProps) {
 
     return (
         <>
-            <div>
-                <h1>
-                    Your Note
-                </h1>
-            </div>
+            <nav className="Navbar">
+                <div>
+                    <h1>
+                        Your Note
+                    </h1>
+                </div>
+            </nav>
             <form onSubmit={handleSubmit}>
                 <input
+                    className="EnterYourNote"
                     type="text"
                     value={text}
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
                     placeholder="Enter your note"
                 />
-                <button type="submit">Add Note</button>
+                <button type="submit" style={{ marginTop: "10px"}}>Add Note</button>
             </form>
         </>
     );
